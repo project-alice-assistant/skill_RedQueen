@@ -149,7 +149,7 @@ class RedQueen(AliceSkill):
 
 
 	def inTheMood(self, session: DialogSession) -> bool:
-		if self.getConfig(key='disableMoodTraits') or 'hermes' not in session.message.topic or 'input' not in session.payload:
+		if self.getConfig(key='disableMoodTraits') or 'hermes' not in session.message.topic or 'input' not in session.payload or session.isAPIGenerated:
 			return True
 
 		if self.mood == 'Anger':
