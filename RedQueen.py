@@ -227,7 +227,7 @@ class RedQueen(AliceSkill):
 		self.logInfo(f'Scheduled next random speaking in {rnd} seconds')
 
 		if not init and not self.UserManager.checkIfAllUser('goingBed') and not self.UserManager.checkIfAllUser('sleeping'):
-			self.say(self.randomTalk(f'randomlySpeak{self.mood}'), siteId='all')
+			self.say(self.randomTalk(f'randomlySpeak{self.mood}'), siteId=constants.RANDOM)
 
 
 	def changeRedQueenStat(self, stat: str, amount: int):
