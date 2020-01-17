@@ -1,5 +1,8 @@
 # RedQueen
 
+[![Continous Integration](https://gitlab.com/project-alice-assistant/skills/skill_RedQueen/badges/master/pipeline.svg)](https://gitlab.com/project-alice-assistant/skills/skill_RedQueen/pipelines/latest)
+
+
 ### Download
 
 ##### > WGET method
