@@ -203,7 +203,7 @@ class RedQueen(AliceSkill):
 			try:
 				self.SkillManager.skillBroadcast(slots['State'][0].value['value'])
 			except:
-				selflogWarning(f"Unsupported user state \"{slots['State'][0].value['value']}\"")
+				self.logWarning(f"Unsupported user state \"{slots['State'][0].value['value']}\"")
 
 		self.endDialog(sessionId=session.sessionId, text=self.TalkManager.randomTalk(slots['State'][0].value['value']), siteId=session.siteId)
 
@@ -230,7 +230,7 @@ class RedQueen(AliceSkill):
 
 	def changeRedQueenStat(self, stat: str, amount: int):
 		if stat not in self._redQueen['stats']:
-			selflogWarning(f'Asked to change stat {stat} but it does not exist')
+			self.logWarning(f'Asked to change stat {stat} but it does not exist')
 			return
 
 		self._redQueen['stats'][stat] += amount
