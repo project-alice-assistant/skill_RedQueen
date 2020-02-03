@@ -28,7 +28,7 @@ class RedQueen(AliceSkill):
 		if not os.path.isfile(redQueenIdentityFile):
 			if os.path.isfile(redQueenIdentityFileTemplate):
 				shutil.copyfile(redQueenIdentityFileTemplate, redQueenIdentityFile)
-				self.log.info('New Red Queen is born')
+				self.logInfo('New Red Queen is born')
 
 				with open(self._getRedQueenIdentityFileName(), 'r') as f:
 					self._redQueen = json.load(f)
@@ -36,10 +36,10 @@ class RedQueen(AliceSkill):
 				self._redQueen['infos']['born'] = time.strftime("%d.%m.%Y")
 				self._saveRedQueenIdentity()
 			else:
-				self.log.info('Cannot find Red Queen identity template')
+				self.logInfo('Cannot find Red Queen identity template')
 				raise SkillStartingFailed(skillName=self.name)
 		else:
-			self.log.info('Found existing Red Queen identity')
+			self.logInfo('Found existing Red Queen identity')
 			with open(self._getRedQueenIdentityFileName(), 'r') as f:
 				self._redQueen = json.load(f)
 
@@ -193,7 +193,7 @@ class RedQueen(AliceSkill):
 	def userStateIntent(self, session: DialogSession):
 		slots = session.slotsAsObjects
 		if 'State' not in slots.keys():
-			self.log.error('No state provided for changing user state')
+			self.logError('No state provided for changing user state')
 			self.endDialog(sessionId=session.sessionId, text=self.TalkManager.randomTalk('error', skill='system'), siteId=session.siteId)
 			return
 
@@ -203,7 +203,7 @@ class RedQueen(AliceSkill):
 			try:
 				self.SkillManager.skillBroadcast(slots['State'][0].value['value'])
 			except:
-				self.log.warning(f"Unsupported user state \"{slots['State'][0].value['value']}\"")
+				selflogWarning(f"Unsupported user state \"{slots['State'][0].value['value']}\"")
 
 		self.endDialog(sessionId=session.sessionId, text=self.TalkManager.randomTalk(slots['State'][0].value['value']), siteId=session.siteId)
 
@@ -222,7 +222,7 @@ class RedQueen(AliceSkill):
 
 		rnd = random.randint(mini, maxi)
 		self.ThreadManager.doLater(interval=rnd, func=self.randomlySpeak)
-		self.log.info(f'Scheduled next random speaking in {rnd} seconds')
+		self.logInfo(f'Scheduled next random speaking in {rnd} seconds')
 
 		if not init and not self.UserManager.checkIfAllUser('goingBed') and not self.UserManager.checkIfAllUser('sleeping'):
 			self.say(self.randomTalk(f'randomlySpeak{self.mood}'), siteId='all')
@@ -230,7 +230,7 @@ class RedQueen(AliceSkill):
 
 	def changeRedQueenStat(self, stat: str, amount: int):
 		if stat not in self._redQueen['stats']:
-			self.log.warning(f'Asked to change stat {stat} but it does not exist')
+			selflogWarning(f'Asked to change stat {stat} but it does not exist')
 			return
 
 		self._redQueen['stats'][stat] += amount
