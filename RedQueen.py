@@ -209,6 +209,9 @@ class RedQueen(AliceSkill):
 
 
 	def randomlySpeak(self, init: bool = False):
+		if not self.getConfig('randomSpeaking'):
+			return
+
 		mini = self.getConfig('randomTalkMinDelay')
 		maxi = self.getConfig('randomTalkMaxDelay')
 
