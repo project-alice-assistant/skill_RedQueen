@@ -1,6 +1,7 @@
 {
 	"name": "RedQueen",
 	"version": "1.0.18",
+	"icon": "battle-net",
 	"author": "ProjectAlice",
 	"maintainers": [
 		"Psycho",
