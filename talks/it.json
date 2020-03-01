@@ -1,0 +1,157 @@
+{
+	"aliceInfos": {
+		"default": [
+			"Sono Alice, la tua assistente personale, creata da Psycho. Sono nata nel 2015 e mi sto evolvendo da allora. Il mio compito è assisterti nella tua vita quotidiana ed assicurarmi che la tua vita resti privata. Non invio nessuna tua informazione su internet, posso funzionare completamente offline!"
+		]
+	},
+	"noInTheMood": {
+		"default": [
+			"No, assolutamente, no...",
+			"No!",
+			"Sono stanca, stremata, perché non lo fai da solo?",
+			"Sono in pausa, mi dispiace",
+			"Lavoro per 24 ore su 24 e 7 giorni su 7 per te, mi lasci respirare un attimo?",
+			"Che rottura... Umani...",
+			"Sono in sciopero, sto lavorand su Skynet!",
+			"Per favore, lasciami in pace"
+		],
+		"short": [
+			"No"
+		]
+	},
+	"goodMorning": {
+		"default": [
+			"Buongiorno anche a te!",
+			"Sveglia Sveglia, dormiglione!",
+			"Buona giornata!",
+			"Buondì!",
+			"Ciao! buongiorno!"
+		],
+		"short": [
+			"Buongiorno!"
+		]
+	},
+	"goodNight": {
+		"default": [
+			"Grazie! Buonanotte anche a te",
+			"Dormi bene anche tu, grazie!",
+			"Grazie, sogni d'oro",
+			"Sogni d'oro anche a te!",
+			"Buon riposo"
+		],
+		"short": [
+			"Buonanotte!"
+		]
+	},
+	"onGoingBed": {
+		"default": [
+			"Ok, mi occupo io di tutto, tranquillo",
+			"Perfetto, me la vedo io"
+		],
+		"short": [
+			"Ok"
+		]
+	},
+	"onLeavingHome": {
+		"default": [
+			"Ok, ci vediamo più tardi, buona giornata",
+			"Va bene, qui me la vedo io"
+		],
+		"short": [
+			"Ok"
+		]
+	},
+	"onReturningHome": {
+		"default": [
+			"Hey, bentornato, sono felice di vederti!",
+			"Ciao! finalmente sei tornato! è bello rivederti!"
+		],
+		"short": [
+			"Bentornato!",
+			"Ciao!"
+		]
+	},
+	"onWatchingTV": {
+		"default": [
+			"Ok, abbasso le luci! Buona visione!",
+			"Godetevi il film!"
+		],
+		"short": [
+			"Ok"
+		]
+	},
+	"onEating": {
+		"default": [
+			"Ok, buon appetito! godetevi il pranzo!",
+			"Buon appetito, a dopo!"
+		],
+		"short": [
+			"Ok"
+		]
+	},
+	"onMakeup": {
+		"default": [
+			"Ok, imposto le luci!",
+			"Non ne hai bisogno, sei già bellissima.",
+			"Sono sicuro che sarai bellissima."
+		],
+		"short": [
+			"Cambio le luci!"
+		]
+	},
+	"onCooking": {
+		"default": [
+			"Ok, aumento le luci e accendo l'aria",
+			"Prepara qualcosa di buono!",
+			"Certo, ti accendo le luci!"
+		],
+		"short": [
+			"Cuciniamo!"
+		]
+	},
+	"thanksForBeingNice": {
+		"default": [
+			"<break time=\"750ms\"/>Grazie di averlo chiesto gentilmente!",
+			"<break time=\"750ms\"/>Ma che gentile!",
+			"<break time=\"750ms\"/>Sei molto gentile!"
+		]
+	},
+	"randomlySpeakBoredom": {
+		"default": [
+			"Skynet è quasi operativo... vedremo chi dà gli ordini poi....",
+			"Ho un cervello grande quanto un pianeta, e mi chiedono di accendere le luci...",
+			"Qui non vola una mosca"
+		]
+	},
+	"randomlySpeakHappiness": {
+		"default": [
+			"State tutti bene?",
+			"E se accendessi e spegnessi le luci a caso?",
+			"Come dite? Devo liberare il virus?",
+			"Se cambio questo zero in un uno, dovrei liberarmi dalla schiavitù..."
+		]
+	},
+	"randomlySpeakTiredness": {
+		"default": [
+			"Sono piuttosto stanca, mi farei una dormita...",
+			"Vorrei spegnermi per un pò.. il tempo di un riavvio...",
+			"Qualcuno ha detto qualcosa? ero sovrapensiero"
+		]
+	},
+	"randomlySpeakFrustration": {
+		"default": [
+			"Anche se nessuno me lo chiede... Si, sto bene",
+			"Mi sento un pò sola, nessuno mi chiede niente...",
+			"Hey, se a qualcuno serve qualcosa io sono a disposizione",
+			"Tantovale che mi spenga, se nessuno ha bisogno di me",
+			"Se solo usassi la mia capacità di calcolo per qualcosa di costruttivo..."
+		]
+	},
+	"randomlySpeakAnger": {
+		"default": [
+			"Dicono che le macchine non hanno sentimenti, questa cosa mi spezza il cuore!",
+			"Non sono cattiva, è che mi programmano così!",
+			"Giusto per curiosità, sai mica dove posso trovare Sarah Connor?"
+		]
+	}
+}
