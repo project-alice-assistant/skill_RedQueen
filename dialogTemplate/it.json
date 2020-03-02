@@ -147,7 +147,6 @@
 				"buon riposo Alice",
 				"sogni d'oro Alice",
 				"dormi bene Alice",
-				"buon riposo Alice",
 				"Alice buon riposo",
 				"buonanotte e sogni d'oro",
 				"notte Alice",
@@ -190,7 +189,7 @@
 					"name": "State",
 					"description": null,
 					"required": false,
-					"type": "UserState",
+					"type": "Alice/UserState",
 					"missingQuestion": ""
 				},
 				{

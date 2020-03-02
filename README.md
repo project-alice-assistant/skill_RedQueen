@@ -14,15 +14,16 @@ wget http://skills.projectalice.ch/RedQueen \
 ### Desc
 Red Queen is the official Project Alice personality skill
 
-- Version: 1.0.20
+- Version: 1.0.21
 - Author: ProjectAlice
 - Maintainers:
   - Psycho, Jierka, maxbachmann
-- Alice minimum Version: 1.0.0-a5
+- Alice minimum Version: 1.0.0-a6
 - Conditions:
   - EN
   - FR
   - DE
+  - IT
 - Requirements: N/A
 
 ### Extra files
