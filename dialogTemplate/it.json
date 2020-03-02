@@ -189,7 +189,7 @@
 					"name": "State",
 					"description": null,
 					"required": false,
-					"type": "Alice/UserState",
+					"type": "UserState",
 					"missingQuestion": ""
 				},
 				{
