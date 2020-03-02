@@ -1,0 +1,206 @@
+{
+	"skill": "RedQueen",
+	"icon": "drink",
+	"description": "Intenti Red Queen",
+	"slotTypes": [
+		{
+			"name": "UserState",
+			"matchingStrictness": null,
+			"automaticallyExtensible": false,
+			"useSynonyms": true,
+			"values": [
+				{
+					"value": "onGoingBed",
+					"synonyms": [
+						"vado a letto",
+						"sto andando a letto",
+						"è ora di dormire",
+						"sono stanco",
+						"vadoa dormire"
+					]
+				},
+				{
+					"value": "onLeavingHome",
+					"synonyms": [
+						"sto uscendo",
+						"esco di casa"
+					]
+				},
+				{
+					"value": "onReturningHome",
+					"synonyms": [
+						"sono a casa",
+						"sono tornato",
+						"eccomi a casa",
+						"sono tornato"
+					]
+				},
+				{
+					"value": "onWatchingTV",
+					"synonyms": [
+						"guardo la tivù",
+						"guardiamo la tivù",
+						"tivù",
+						"guardiamo la televisione",
+						"un pò di televisione"
+					]
+				},
+				{
+					"value": "onEating",
+					"synonyms": [
+						"si mangia",
+						"pranziamo",
+						"a tavola",
+						"in tavola"
+					]
+				},
+				{
+					"value": "onMakeup",
+					"synonyms": [
+						"mi faccio bella",
+						"mi preparo"
+					]
+				},
+				{
+					"value": "onCooking",
+					"synonyms": [
+						"si cucina",
+						"prepariamo da mangiare"
+					]
+				}
+			]
+		},
+		{
+			"name": "PersonDesignation",
+			"matchingStrictness": null,
+			"automaticallyExtensible": true,
+			"useSynonyms": true,
+			"values": [
+				{
+					"value": "io",
+					"synonyms": [
+						"sono"
+					]
+				},
+				{
+					"value": "noi",
+					"synonyms": [
+						"ci",
+						"siamo"
+					]
+				}
+			]
+		}
+	],
+	"intents": [
+		{
+			"name": "WhoAreYou",
+			"description": "L'utente chiede informazioni sull'assistente",
+			"enabledByDefault": true,
+			"utterances": [
+				"potresti dirmi chi sei",
+				"dimmi qualcosa di te",
+				"mi dici chi sei",
+				"chi cazzo sei",
+				"e tu cosa sei",
+				"dimmi chi sei",
+				"cosa cazzo sei",
+				"chi diavolo sei",
+				"e tu chi diavolo saresti",
+				"cosa sei",
+				"chi sei tu"
+			],
+			"slots": []
+		},
+		{
+			"name": "GoodMorning",
+			"description": "L'utente da il buon giorno all'assistente",
+			"enabledByDefault": true,
+			"utterances": [
+				"sveglia Alice",
+				"per favore svegliati Alice",
+				"svegliati Alice per piacere",
+				"sveglia per piacere",
+				"attivati è mattina",
+				"è giorno Alice",
+				"buongiorno Alice",
+				"è ora di alzarsi Alice",
+				"Alice svegliati",
+				"in piedi Alice",
+				"sveglia dormigliona",
+				"buon inizio giornata",
+				"buongiorno alziamoci",
+				"ora di alzarsi per favore",
+				"ora di alzarsi",
+				"buondì"
+			],
+			"slots": []
+		},
+		{
+			"name": "GoodNight",
+			"description": "L'utente da la buona notte all'assistente",
+			"enabledByDefault": true,
+			"utterances": [
+				"Alice è ora di dormire",
+				"buonanotte Alice",
+				"ti auguro la buonanotte Alice",
+				"buon riposo Alice",
+				"sogni d'oro Alice",
+				"dormi bene Alice",
+				"buon riposo Alice",
+				"Alice buon riposo",
+				"buonanotte e sogni d'oro",
+				"notte Alice",
+				"Alice a letto",
+				"ora di dormire Alice",
+				"si dorme Alice",
+				"Alice notte",
+				"buonanotte",
+				"si va a dormire"
+			],
+			"slots": []
+		},
+		{
+			"name": "ChangeUserState",
+			"description": "",
+			"enabledByDefault": true,
+			"utterances": [
+				"{stiamo:=>Who} {andando a letto:=>State}",
+				"andiamo {a letto:=>State}",
+				"ora di {andare a letto:=>State}",
+				"{noi:=>Who} stiamo {cucinando:=>State}",
+				"{io:=>Who} mi sto {preparando:=>State}",
+				"{io:=>Who} mi sto facendo {il trucco:=>State}",
+				"{io:=>Who} sto {andando a dormire:=>State}",
+				"{sto:=>Who} {andando a dormire:=>State}",
+				"{noi:=>Who} stiamo {andando a dormire:=>State}",
+				"{noi:=>Who} stiamo per {andare a dormire:=>State}",
+				"guardiamo {la tivù:=>State}",
+				"prepara la {tivù:=>State} per piacere",
+				"guarda che {noi:=>Who} stiamo {uscendo di casa:=>State}",
+				"prepariamoci per {il pranzo:=>State} per favore",
+				"vedi che {esco di casa:=>State}",
+				"prepariamoci per {andare a letto:=>State}",
+				"siamo pronti per {mangiare:=>State}",
+				"{noi:=>Who} siamo appena {tornati:=>State}",
+				"{noi:=>Who} stiamo {guardando la tivù:=>State}"
+			],
+			"slots": [
+				{
+					"name": "State",
+					"description": null,
+					"required": false,
+					"type": "UserState",
+					"missingQuestion": ""
+				},
+				{
+					"name": "Who",
+					"description": null,
+					"required": false,
+					"type": "PersonDesignation",
+					"missingQuestion": ""
+				}
+			]
+		}
+	]
+}
