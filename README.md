@@ -3,14 +3,6 @@
 [![Continous Integration](https://gitlab.com/project-alice-assistant/skills/skill_RedQueen/badges/master/pipeline.svg)](https://gitlab.com/project-alice-assistant/skills/skill_RedQueen/pipelines/latest)
 
 
-### Download
-
-##### > WGET method
-```bash
-wget http://skills.projectalice.ch/RedQueen \
--O ~/ProjectAlice/system/skillInstallTickets/RedQueen.install
-```
-
 ### Desc
 Red Queen is the official Project Alice personality skill
 
