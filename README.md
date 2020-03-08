@@ -6,7 +6,7 @@
 ### Desc
 Red Queen is the official Project Alice personality skill
 
-- Version: 1.0.21
+- Version: 1.0.22
 - Author: ProjectAlice
 - Maintainers:
   - Psycho, Jierka, maxbachmann
