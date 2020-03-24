@@ -1,5 +1,6 @@
 import json
 import time
+from pathlib import Path
 
 import os
 import random
@@ -16,32 +17,34 @@ from core.util.Decorators import IntentHandler
 class RedQueen(AliceSkill):
 
 	def __init__(self):
-		self._redQueen = None
+		self._me = None
 		super().__init__()
 
 
 	def onStart(self):
 		super().onStart()
-		redQueenIdentityFile = self._getRedQueenIdentityFileName()
-		redQueenIdentityFileTemplate = redQueenIdentityFile + '.dist'
+		redQueenIdentityFile = self._getRedQueenIdentityFile()
+		redQueenIdentityFileTemplate = redQueenIdentityFile.with_suffix(redQueenIdentityFile.suffix + '.dist')
 
-		if not os.path.isfile(redQueenIdentityFile):
-			if os.path.isfile(redQueenIdentityFileTemplate):
-				shutil.copyfile(redQueenIdentityFileTemplate, redQueenIdentityFile)
+		if redQueenIdentityFile.exists():
+			self._me = json.loads(redQueenIdentityFile.read_text())
+			if not self._me:
+				self.logWarning('Red Queen identity file seems corrupted, rebuilding it')
+				redQueenIdentityFile.unlink()
+
+		if not redQueenIdentityFile.exists():
+			if redQueenIdentityFileTemplate.exists():
+				shutil.copyfile(str(redQueenIdentityFileTemplate), str(redQueenIdentityFile))
 				self.logInfo('New Red Queen is born')
-
-				with open(self._getRedQueenIdentityFileName(), 'r') as f:
-					self._redQueen = json.load(f)
-
-				self._redQueen['infos']['born'] = time.strftime("%d.%m.%Y")
+				self._me = json.loads(redQueenIdentityFile.read_text())
+				self._me['infos']['born'] = time.strftime("%d.%m.%Y")
 				self._saveRedQueenIdentity()
 			else:
 				self.logInfo('Cannot find Red Queen identity template')
 				raise SkillStartingFailed(skillName=self.name)
 		else:
 			self.logInfo('Found existing Red Queen identity')
-			with open(self._getRedQueenIdentityFileName(), 'r') as f:
-				self._redQueen = json.load(f)
+			self._me = json.loads(redQueenIdentityFile.read_text())
 
 
 	def onStop(self):
@@ -65,20 +68,24 @@ class RedQueen(AliceSkill):
 
 	@property
 	def mood(self) -> str:
-		if self._redQueen:
-			return self._redQueen['infos']['mood']
+		if self._me:
+			return self._me['infos']['mood']
 		else:
 			return constants.UNKNOWN
 
 
 	@staticmethod
-	def _getRedQueenIdentityFileName() -> str:
-		return os.path.dirname(__file__) + '/redQueen.json'
+	def _getRedQueenIdentityFile() -> Path:
+		return Path(os.path.dirname(__file__), 'redQueen.json')
 
 
 	def _saveRedQueenIdentity(self):
-		with open(self._getRedQueenIdentityFileName(), 'w') as f:
-			json.dump(self._redQueen, f, indent=4, sort_keys=False)
+		file = self._getRedQueenIdentityFile()
+		if not file.exists():
+			self.logWarning('Red Queen identity file is not existing, cannot save current state')
+			return
+
+		json.dumps(self._getRedQueenIdentityFile().read_text(), indent=4, sort_keys=False)
 
 
 	def onQuarterHour(self):
@@ -95,7 +102,7 @@ class RedQueen(AliceSkill):
 
 
 	def onFiveMinute(self):
-		self._redQueen['infos']['mood'] = self._decideStateOfMind()
+		self._me['infos']['mood'] = self._decideStateOfMind()
 		self._saveRedQueenIdentity()
 
 
@@ -232,25 +239,25 @@ class RedQueen(AliceSkill):
 
 
 	def changeRedQueenStat(self, stat: str, amount: int):
-		if stat not in self._redQueen['stats']:
+		if stat not in self._me['stats']:
 			self.logWarning(f'Asked to change stat {stat} but it does not exist')
 			return
 
-		self._redQueen['stats'][stat] += amount
-		if self._redQueen['stats'][stat] < 0:
-			self._redQueen['stats'][stat] = 0
-		elif self._redQueen['stats'][stat] > 100:
-			self._redQueen['stats'][stat] = 100
+		self._me['stats'][stat] += amount
+		if self._me['stats'][stat] < 0:
+			self._me['stats'][stat] = 0
+		elif self._me['stats'][stat] > 100:
+			self._me['stats'][stat] = 100
 
 
 	def _decideStateOfMind(self) -> str:
 		# TODO Algorythm for weighting the 5 stats
 		stats = {
-			'Anger'      : self._redQueen['stats']['anger'] * 5,
-			'Tiredness'  : self._redQueen['stats']['tiredness'] * 4,
-			'Happiness'  : self._redQueen['stats']['happiness'] * 3,
-			'Frustration': self._redQueen['stats']['frustration'] * 2,
-			'Boredom'    : self._redQueen['stats']['boredom']
+			'Anger'      : self._me['stats']['anger'] * 5,
+			'Tiredness'  : self._me['stats']['tiredness'] * 4,
+			'Happiness'  : self._me['stats']['happiness'] * 3,
+			'Frustration': self._me['stats']['frustration'] * 2,
+			'Boredom'    : self._me['stats']['boredom']
 		}
 
 		return self.Commons.dictMaxValue(stats)
