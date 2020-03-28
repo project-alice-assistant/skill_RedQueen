@@ -40,8 +40,7 @@ class RedQueen(AliceSkill):
 				self._me['infos']['born'] = time.strftime("%d.%m.%Y")
 				self._saveRedQueenIdentity()
 			else:
-				self.logInfo('Cannot find Red Queen identity template')
-				raise SkillStartingFailed(skillName=self.name)
+				raise SkillStartingFailed(skillName=self.name, error='Cannot find Red Queen identity template')
 		else:
 			self.logInfo('Found existing Red Queen identity')
 			self._me = json.loads(redQueenIdentityFile.read_text())

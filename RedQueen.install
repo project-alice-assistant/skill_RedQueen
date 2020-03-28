@@ -1,7 +1,7 @@
 {
 	"name": "RedQueen",
-	"version": "1.0.23",
-	"icon": "fab fa-battle-net",
+	"version": "1.0.24",
+	"icon": "fas fa-biohazard",
 	"category": "alice",
 	"author": "ProjectAlice",
 	"maintainers": [
