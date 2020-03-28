@@ -169,7 +169,7 @@ class RedQueen(AliceSkill):
 			chance = 2
 
 		try:
-			if not self.ProtectedIntentManager.isProtectedIntent(session.message.topic) and not self.politnessUsed(session.payload['input']) and random.randint(0, 100) < chance and not self.MultiIntentManager.isProcessing(session.sessionId):
+			if random.randint(0, 100) < chance and not self.ProtectedIntentManager.isProtectedIntent(session.message.topic) and not self.politnessUsed(session.payload['input']) and not self.MultiIntentManager.isProcessing(session.sessionId):
 				self.endDialog(session.sessionId, self.randomTalk('noInTheMood'))
 				return False
 		except:
