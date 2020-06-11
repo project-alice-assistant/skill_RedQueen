@@ -131,7 +131,6 @@ class RedQueen(AliceSkill):
 
 			if randint(0, 100) < chance:
 				self.say(text=self.randomTalk('thanksForBeingNice'), siteId=session.siteId)
-				return
 
 
 	def politnessUsed(self, text: str) -> bool:
