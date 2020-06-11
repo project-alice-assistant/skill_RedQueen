@@ -133,8 +133,6 @@ class RedQueen(AliceSkill):
 				self.say(text=self.randomTalk('thanksForBeingNice'), siteId=session.siteId)
 				return
 
-			return
-
 
 	def politnessUsed(self, text: str) -> bool:
 		forms = self.LanguageManager.getStrings(key='politness', skill=self.name)
@@ -172,7 +170,7 @@ class RedQueen(AliceSkill):
 				self.endDialog(session.sessionId, self.randomTalk('noInTheMood'))
 				return False
 		except:
-			return True
+			pass
 
 		return True
 
@@ -203,9 +201,7 @@ class RedQueen(AliceSkill):
 			self.endDialog(sessionId=session.sessionId, text=self.TalkManager.randomTalk('error', skill='system'), siteId=session.siteId)
 			return
 
-		if 'Who' in slots.keys():
-			pass
-		else:
+		if not 'Who' in slots.keys():
 			try:
 				self.SkillManager.skillBroadcast(slots['State'][0].value['value'])
 			except:
