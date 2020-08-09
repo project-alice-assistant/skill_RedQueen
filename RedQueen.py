@@ -150,7 +150,7 @@ class RedQueen(AliceSkill):
 
 
 	def inTheMood(self, session: DialogSession) -> bool:
-		if self.getConfig(key='disableMoodTraits') or 'hermes' not in session.message.topic or 'input' not in session.payload:
+		if self.getConfig(key='disableMoodTraits'):
 			return True
 
 		if self.mood == 'Anger':
@@ -164,12 +164,9 @@ class RedQueen(AliceSkill):
 		else:
 			chance = 2
 
-		try:
-			if random.randint(0, 100) < chance and not self.ProtectedIntentManager.isProtectedIntent(session.message.topic) and not self.politnessUsed(session.payload['input']) and not self.MultiIntentManager.isProcessing(session.sessionId):
-				self.endDialog(session.sessionId, self.randomTalk('noInTheMood'))
-				return False
-		except:
-			pass
+		if random.randint(0, 100) < chance:
+			self.endDialog(session.sessionId, self.randomTalk('noInTheMood'))
+			return False
 
 		return True
 
