@@ -1,7 +1,5 @@
 {
 	"skill": "RedQueen",
-	"icon": "drink",
-	"description": "Die Absichten der Roten Königin",
 	"slotTypes": [
 		{
 			"name": "UserState",
@@ -118,7 +116,6 @@
 	"intents": [
 		{
 			"name": "WhoAreYou",
-			"description": "User asks informations about the assistant",
 			"enabledByDefault": true,
 			"utterances": [
 				"kannst du mir bitte sagen wer du bist",
@@ -138,7 +135,6 @@
 		},
 		{
 			"name": "GoodMorning",
-			"description": "User wishes a good morning to the assistant",
 			"enabledByDefault": true,
 			"utterances": [
 				"bitte wach auf",
@@ -161,7 +157,6 @@
 		},
 		{
 			"name": "GoodNight",
-			"description": "User wishes a good night to the assistant",
 			"enabledByDefault": true,
 			"utterances": [
 				"alice es ist zeit zu schlafen",
@@ -183,7 +178,6 @@
 		},
 		{
 			"name": "ChangeUserState",
-			"description": "",
 			"enabledByDefault": true,
 			"utterances": [
 				"{Wir:=>Who} gehen {schlafen:=>State}",
