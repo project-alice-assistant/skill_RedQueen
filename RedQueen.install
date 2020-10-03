@@ -1,6 +1,6 @@
 {
     "name": "RedQueen",
-    "version": "1.0.26",
+    "version": "1.0.27",
     "icon": "fas fa-biohazard",
     "category": "alice",
     "author": "ProjectAlice",
@@ -9,7 +9,7 @@
         "maxbachmann"
     ],
     "desc": "Red Queen is the official Project Alice personality skill",
-    "aliceMinVersion": "1.0.0-b1",
+    "aliceMinVersion": "1.0.0-b3",
     "systemRequirements": [],
     "pipRequirements": [],
     "conditions": {
