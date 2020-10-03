@@ -185,14 +185,12 @@
 			"slots": [
 				{
 					"name": "State",
-					"description": null,
 					"required": false,
 					"type": "UserState",
 					"missingQuestion": ""
 				},
 				{
 					"name": "Who",
-					"description": null,
 					"required": false,
 					"type": "PersonDesignation",
 					"missingQuestion": ""
