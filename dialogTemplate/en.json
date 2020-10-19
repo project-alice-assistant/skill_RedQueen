@@ -1,7 +1,5 @@
 {
 	"skill": "RedQueen",
-	"icon": "drink",
-	"description": "Red queen intents",
 	"slotTypes": [
 		{
 			"name": "UserState",
@@ -95,7 +93,6 @@
 	"intents": [
 		{
 			"name": "WhoAreYou",
-			"description": "User asks informations about the assistant",
 			"enabledByDefault": true,
 			"utterances": [
 				"could you tell me what you are",
@@ -114,7 +111,6 @@
 		},
 		{
 			"name": "GoodMorning",
-			"description": "User wishes a good morning to the assistant",
 			"enabledByDefault": true,
 			"utterances": [
 				"please wake up alice",
@@ -138,7 +134,6 @@
 		},
 		{
 			"name": "GoodNight",
-			"description": "User wishes a good night to the assistant",
 			"enabledByDefault": true,
 			"utterances": [
 				"alice it's time to sleep",
@@ -162,7 +157,6 @@
 		},
 		{
 			"name": "ChangeUserState",
-			"description": "",
 			"enabledByDefault": true,
 			"utterances": [
 				"{we're:=>Who} {going bed:=>State}",
@@ -188,14 +182,12 @@
 			"slots": [
 				{
 					"name": "State",
-					"description": null,
 					"required": false,
 					"type": "UserState",
 					"missingQuestion": ""
 				},
 				{
 					"name": "Who",
-					"description": null,
 					"required": false,
 					"type": "PersonDesignation",
 					"missingQuestion": ""
