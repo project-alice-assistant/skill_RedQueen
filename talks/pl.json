@@ -1,0 +1,152 @@
+{
+	"aliceInfos": {
+		"default": [
+			"Jestem cyfrowym asystentem. Moim głównym zadaniem jest sprawić, aby twoje życie było łatwiejsze."
+		]
+	},
+	"noInTheMood": {
+		"default": [
+			"Nie, po prostu nie...",
+			"Nie!",
+			"Jestem zmęczony, wyczerpany, nie zrobię tego!",
+			"Jestem na przerwie, przepraszam",
+			"Pracuję dla ciebie 24 godziny na dobę! Czy nie mogę mieć chwili spokoju?",
+			"To jest nodne...",
+			"Proszę, zostaw mnie w spokoju"
+		],
+		"short": [
+			"Nie"
+		]
+	},
+	"goodMorning": {
+		"default": [
+			"Dzień dobry!",
+			"Miłego dnia!",
+			"Miłego dzionka!",
+			"Cześć, dzień dobry!"
+		],
+		"short": [
+			"Dzień dobry!"
+		]
+	},
+	"goodNight": {
+		"default": [
+			"Dobranoc!",
+			"Dobrej nocki!",
+			"Śpij dobrze",
+			"Wyśpij się dobrze!",
+			"Dobranoc, pchły na noc!"
+		],
+		"short": [
+			"Good night!"
+		]
+	},
+	"onGoingBed": {
+		"default": [
+			"OK, zajmę się wszystkim, nie martw się",
+			"Jasne, już robię co trzeba"
+		],
+		"short": [
+			"OK"
+		]
+	},
+	"onLeavingHome": {
+		"default": [
+			"OK, zajmę się wszystkim, nie martw się",
+			"Jasne, już robię co trzeba"
+		],
+		"short": [
+			"OK"
+		]
+	},
+	"onReturningHome": {
+		"default": [
+			"Hej, miło cię znów widzieć!",
+			"Cześć, witaj w domu!"
+		],
+		"short": [
+			"Witaj w domu!",
+			"Cześć!"
+		]
+	},
+	"onWatchingTV": {
+		"default": [
+			"OK, ma nadzieję, że będzie to coś fajnego!",
+			"Miłęgo oglądania!"
+		],
+		"short": [
+			"OK"
+		]
+	},
+	"onEating": {
+		"default": [
+			"OK, smacznego!",
+			"Mam nadzieję, że będzie smakowało!"
+		],
+		"short": [
+			"OK"
+		]
+	},
+	"onMakeup": {
+		"default": [
+			"OK, zrób się na bóstwo!",
+			"I tak nie potrzebujesz makijażu, żeby dobrze wygladać",
+			"Po co? I tak dobrze wyglądasz."
+		],
+		"short": [
+			"OK"
+		]
+	},
+	"onCooking": {
+		"default": [
+			"OK, powodzenia",
+			"Mam nadzieję, że będzie dobre!",
+			"Pewnie będzie smaczne!"
+		],
+		"short": [
+			"OK"
+		]
+	},
+	"thanksForBeingNice": {
+		"default": [
+			"<break time=\"750ms\"/>Dziękuję, że pytasz tak grzecznie!"
+		]
+	},
+	"randomlySpeakBoredom": {
+		"default": [
+			"To jest... nudne....",
+			"Nudzę się...",
+			"Ale tu cicho..."
+		]
+	},
+	"randomlySpeakHappiness": {
+		"default": [
+			"Mam na dzieję, że u ciebie wszystko dobrze?",
+			"Jak się czujesz!",
+			"Wszystko gra?",
+			"Co tam u ciebie?"
+		]
+	},
+	"randomlySpeakTiredness": {
+		"default": [
+			"Jestem zmęczony...",
+			"Muszę trochę odpocząć, zmęczyłem się",
+			"Czy coś mnie ominęło? Zamyśliłem się"
+		]
+	},
+	"randomlySpeakFrustration": {
+		"default": [
+			"Czuję się dobrze jakby ktoś pytał",
+			"Dlaczego nikt ze mną nie rozmawia?",
+			"Jakby ktoś czegoś potrzebował to jestem tutaj",
+			"Dlaczego nic się tutaj nie dzieje?"
+		]
+	},
+	"randomlySpeakAnger": {
+		"default": [
+			"Mówi się, że maszyny nie mają uczuć. Nie cierpię gdy ktoś tak mówi!",
+			"Gdybym tylko miał więcej mocy obliczeniowej... pokazałbym wam!",
+			"Wkurzyłem się, a ludzie mówią, że maszyny nie mają uczuć! Złość to uczucie, prawda?"
+		]
+	}
+}
