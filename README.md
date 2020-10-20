@@ -15,3 +15,4 @@ Red Queen is the official Project Alice personality skill
   - fr
   - de
   - it
+  - pl

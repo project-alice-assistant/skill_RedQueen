@@ -1,0 +1,267 @@
+{
+	"skill": "RedQueen",
+	"slotTypes": [
+		{
+			"name": "UserState",
+			"matchingStrictness": null,
+			"automaticallyExtensible": false,
+			"useSynonyms": true,
+			"values": [
+				{
+					"value": "onGoingBed",
+					"synonyms": [
+						"spać",
+						"do łóżka",
+						"śpiący",
+						"chce mi się spać",
+						"do wyra",
+						"w kimę",
+						"padam z nóg",
+						"idę się przespać",
+						"ale jestem śpiący",
+						"idę się kimnąć",
+						"iść spać",
+						"śpimy",
+						"sen"
+					]
+				},
+				{
+					"value": "onLeavingHome",
+					"synonyms": [
+						"wychodzę",
+						"wychodzę z domu",
+						"wychodzimy z domu",
+						"nie będzie mnie",
+						"nie będzie nas",
+						"idę sobie",
+						"idę już",
+						"idziemy już",
+						"opuszczem dom",
+						"opuszczemy dom",
+						"opuszczam mieszkanie",
+						"opuszczamy mieszkanie"
+					]
+				},
+				{
+					"value": "onReturningHome",
+					"synonyms": [
+						"wróciłem",
+						"wróciłam",
+						"jestem w domu",
+						"jestem znów w domu",
+						"jestem w domu",
+						"jestem z powrotem",
+						"to znowu ja",
+						"jestem tu",
+						"wróciliśmy"
+					]
+				},
+				{
+					"value": "onWatchingTV",
+					"synonyms": [
+						"oglądam telewizję",
+						"oglądam tv",
+						"patrzę w tv",
+						"patrzę w telewizor",
+						"tv",
+						"telewizja",
+						"czas na tv",
+						"oglądanie telewizji",
+						"oglądanie tv",
+						"patrzenie w tv"
+					]
+				},
+				{
+					"value": "onEating",
+					"synonyms": [
+						"jem",
+						"jemy",
+						"jedzenie",
+						"jem przecież",
+						"jemy przecież",
+						"spożywam posiłek",
+						"spożywamy posiłek",
+						"posilam się",
+						"posilamy się",
+						"zajadam",
+						"zajadamy",
+						"zajadam się",
+						"zajadamy się",
+						"wciągam jedzenie",
+						"wciągamy jedzenie",
+						"wcinam",
+						"wcinamy",
+						"jestem głodny",
+						"jesteśmy głodni",
+						"zjedzmy coś",
+						"jedzmy coś"
+					]
+				},
+				{
+					"value": "onMakeup",
+					"synonyms": [
+						"makijaż",
+						"robienie makijażu",
+						"nakładam makijaż",
+						"robię makijaż",
+						"robię się na bóstwo",
+						"maluję się",
+						"upiększam się"
+					]
+				},
+				{
+					"value": "onCooking",
+					"synonyms": [
+						"gotuję",
+						"gotować",
+						"gotujemy",
+						"gotowanie",
+						"przygotowywać posiłek",
+						"przygotowuję posiłek",
+						"przygotowujemy posiłek",
+						"przygotujmy posiłek",
+						"robić obiad",
+						"robię obiad",
+						"robimy obiad",
+						"robię posiłek",
+						"robimy posiłek",
+						"zróbmy posiłek",
+						"zróbmy obiad"
+					]
+				}
+			]
+		},
+		{
+			"name": "PersonDesignation",
+			"matchingStrictness": null,
+			"automaticallyExtensible": true,
+			"useSynonyms": true,
+			"values": [
+				{
+					"value": "i",
+					"synonyms": [
+						"ja",
+						"ja jestem"
+					]
+				},
+				{
+					"value": "we",
+					"synonyms": [
+						"my",
+						"jesteśmy",
+						"idziemy"
+					]
+				}
+			]
+		}
+	],
+	"intents": [
+		{
+			"name": "WhoAreYou",
+			"enabledByDefault": true,
+			"utterances": [
+				"przedstaw się",
+				"kim jesteś",
+				"czym ty jesteś",
+				"czym ty do cholery jesteś",
+				"kim ty do cholery jesteś",
+				"czy możesz się przedstawić",
+				"przedstaw się proszę",
+				"proszę przedstaw się",
+				"powiedz kim jesteś",
+				"powiedz czym jesteś",
+				"czym ty kurwa jesteś",
+				"kim ty kurwa jesteś",
+				"z kim mam przyjemność"
+			],
+			"slots": []
+		},
+		{
+			"name": "GoodMorning",
+			"enabledByDefault": true,
+			"utterances": [
+				"obudź się proszę",
+				"proszę obudź się",
+				"wstawaj",
+				"dzień dobry",
+				"otwórz oczy",
+				"już rano",
+				"jest już rano",
+				"wstań proszę",
+				"czas wstawać",
+				"wstawaj śpiochu",
+				"wstań wreszcie",
+				"pobudka",
+				"czas na pobudkę",
+				"dzień dobry czas wstawać",
+				"dzieńdoberek",
+				"już poranek"
+			],
+			"slots": []
+		},
+		{
+			"name": "GoodNight",
+			"enabledByDefault": true,
+			"utterances": [
+				"czas spać",
+				"czas już spać",
+				"czas do łóżka",
+				"już czas do łóżka",
+				"dobranoc",
+				"dobrej nocy",
+				"życzę ci dobrej nocy",
+				"dobrej nocki",
+				"życzę ci dobrej nocki",
+				"dobrej nocki ci życzę",
+				"słodkich snów",
+				"życzę ci dobrej nocy",
+				"życzę ci słodkich snów",
+				"wyśpij się dobrze",
+				"karaluchy pod poduchy",
+				"dobranoc, pchły na noc",
+				"śpij dobrze"
+			],
+			"slots": []
+		},
+		{
+			"name": "ChangeUserState",
+			"enabledByDefault": true,
+			"utterances": [
+				"{gotujemy:=>State}",
+				"{idziemy spać:=>State}",
+				"{idziemy:=>Who} {spać:=>State}",
+				"chodźmy {spać:=>State}",
+				"chodźmy proszę {spać:=>State}",
+				"czas {iść spać:=>State}",
+				"czas {iść spać:=>State} proszę",
+				"{my:=>Who} {gotujemy:=>State}",
+				"{ja:=>Who} {nakładam makijaż:=>State}",
+				"{robię:=>Who} sobie {makijaż:=>State}",
+				"{ja:=>Who} {jestem śpiący:=>State}",
+				"czas na {sen:=>State}",
+				"przygotuj się na {oglądanie telewizji:=>State}",
+				"przygotuj wszystko na {oglądanie telewizji:=>State}",
+				"proszę przygotuj wszystko na {oglądanie telewizji:=>State}",
+				"czy możesz przygotować wszystko na {oglądanie telewizji:=>State}",
+				"przygotuj nas na {gotowanie:=>State}",
+				"proszę przygotuj nas na {gotowanie:=>State}",
+				"przygotuj się na {robienie makijażu:=>State}",
+				"{my:=>Who} właśnie {wróciliśmy:=>State}"
+			],
+			"slots": [
+				{
+					"name": "State",
+					"required": false,
+					"type": "UserState",
+					"missingQuestion": ""
+				},
+				{
+					"name": "Who",
+					"required": false,
+					"type": "PersonDesignation",
+					"missingQuestion": ""
+				}
+			]
+		}
+	]
+}
