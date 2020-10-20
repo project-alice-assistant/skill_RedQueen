@@ -134,7 +134,7 @@ class RedQueen(AliceSkill):
 
 
 	def politnessUsed(self, text: str) -> bool:
-		forms = self.LanguageManager.getStrings(key='politness', skill=self.name)
+		forms = self.LanguageManager.getStrings(key='politness', skill='system')
 
 		for form in forms:
 			if form not in text:
