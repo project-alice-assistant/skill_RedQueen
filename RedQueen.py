@@ -192,18 +192,23 @@ class RedQueen(AliceSkill):
 	@IntentHandler('ChangeUserState')
 	def userStateIntent(self, session: DialogSession):
 		slots = session.slotsAsObjects
+
 		if 'State' not in slots.keys():
 			self.logError('No state provided for changing user state')
-			self.endDialog(sessionId=session.sessionId, text=self.TalkManager.randomTalk('error', skill='system'), siteId=session.siteId)
+			self.endDialog(sessionId=session.sessionId, text=self.TalkManager.randomTalk('error', skill='system'),
+						   siteId=session.siteId)
 			return
 
-		if not 'Who' in slots.keys():
-			try:
-				self.SkillManager.skillBroadcast(slots['State'][0].value['value'])
-			except:
-				self.logWarning(f"Unsupported user state \"{slots['State'][0].value['value']}\"")
+		# Todo re enable this if statement when the "personDesignation" code gets fully implemented
+		# if not 'Who' in slots.keys():
+		try:
+			self.SkillManager.skillBroadcast(slots['State'][0].value['value'])
 
-		self.endDialog(sessionId=session.sessionId, text=self.TalkManager.randomTalk(slots['State'][0].value['value']), siteId=session.siteId)
+		except:
+			self.logWarning(f"Unsupported user state \"{slots['State'][0].value['value']}\"")
+
+		self.endDialog(sessionId=session.sessionId, text=self.TalkManager.randomTalk(slots['State'][0].value['value']),
+					   siteId=session.siteId)
 
 
 	def randomlySpeak(self, init: bool = False):

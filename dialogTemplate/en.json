@@ -77,14 +77,19 @@
 				{
 					"value": "i",
 					"synonyms": [
-						"i'm"
+						"i'm",
+						"i've",
+						"i have",
+						"i am"
 					]
 				},
 				{
 					"value": "we",
 					"synonyms": [
 						"us",
-						"we're"
+						"we're",
+						"we are",
+						"we have"
 					]
 				}
 			]
@@ -170,12 +175,14 @@
 				"time for {going bed:=>State}",
 				"{we:=>Who} are {cooking:=>State}",
 				"{i:=>Who} am putting {makeup:=>State}",
+				"{i:=>Who} am putting my {makeup:=>State} on",
 				"{i:=>Who} am making my {makeup:=>State}",
 				"{i:=>Who} am {going bed:=>State}",
 				"{i'm:=>Who} {going bed:=>State}",
 				"{we:=>Who} are {going bed:=>State}",
 				"{we:=>Who} are {going to bed:=>State}",
 				"it's {tv time:=>State}",
+				"{going out:=>State}",
 				"prepare for {tv:=>State} please",
 				"please prepare for {us:=>Who} {leaving home:=>State}",
 				"prepare for {eating:=>State} please",
