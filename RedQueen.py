@@ -84,7 +84,7 @@ class RedQueen(AliceSkill):
 			self.logWarning('Red Queen identity file is not existing, cannot save current state')
 			return
 
-		json.dumps(self._getRedQueenIdentityFile().read_text(), indent=4, sort_keys=False)
+		file.write_text(json.dumps(self._me, indent='\t'))
 
 
 	def onQuarterHour(self):
