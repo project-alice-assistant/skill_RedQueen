@@ -10,6 +10,7 @@ from random import randint
 from core.ProjectAliceExceptions import SkillStartingFailed
 from core.base.model.AliceSkill import AliceSkill
 from core.commons import constants
+from core.device.model.DeviceAbility import DeviceAbility
 from core.dialog.model.DialogSession import DialogSession
 from core.util.Decorators import IntentHandler
 
@@ -226,12 +227,14 @@ class RedQueen(AliceSkill):
 		elif self.mood == 'Frustrated':
 			maxi /= 2
 
+		if not init and not self.UserManager.checkIfAllUser('goingBed') and not self.UserManager.checkIfAllUser('sleeping'):
+			devices = self.DeviceManager.getDevicesWithAbilities([DeviceAbility.PLAY_SOUND])
+			if devices:
+				self.say(self.randomTalk(f'randomlySpeak{self.mood}'), siteId=random.choice(devices).uid)
+
 		rnd = random.randint(mini, maxi)
 		self.ThreadManager.doLater(interval=rnd, func=self.randomlySpeak)
 		self.logInfo(f'Scheduled next random speaking in {rnd} seconds')
-
-		if not init and not self.UserManager.checkIfAllUser('goingBed') and not self.UserManager.checkIfAllUser('sleeping'):
-			self.say(self.randomTalk(f'randomlySpeak{self.mood}'), siteId='all')
 
 
 	def changeRedQueenStat(self, stat: str, amount: int):
