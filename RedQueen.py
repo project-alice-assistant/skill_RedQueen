@@ -85,7 +85,7 @@ class RedQueen(AliceSkill):
 			self.logWarning('Red Queen identity file is not existing, cannot save current state')
 			return
 
-		file.write_text(json.dumps(self._me, indent='\t'))
+		file.write_text(json.dumps(self._me, indent='\t', sort_keys=False))
 
 
 	def onQuarterHour(self):
@@ -131,7 +131,7 @@ class RedQueen(AliceSkill):
 				chance = 25
 
 			if randint(0, 100) < chance:
-				self.say(text=self.randomTalk('thanksForBeingNice'), siteId=session.deviceUid)
+				self.say(text=self.randomTalk('thanksForBeingNice'), siteId=session.siteId)
 
 
 	def politnessUsed(self, text: str) -> bool:
@@ -174,19 +174,19 @@ class RedQueen(AliceSkill):
 
 	@IntentHandler('WhoAreYou')
 	def whoIntent(self, session: DialogSession):
-		self.endDialog(sessionId=session.sessionId, text=self.randomTalk('aliceInfos'), siteId=session.deviceUid)
+		self.endDialog(sessionId=session.sessionId, text=self.randomTalk('aliceInfos'), siteId=session.siteId)
 
 
 	@IntentHandler('GoodMorning')
 	def morningIntent(self, session: DialogSession):
 		self.SkillManager.skillBroadcast(constants.EVENT_WAKEUP)
 		time.sleep(0.5)
-		self.endDialog(sessionId=session.sessionId, text=self.randomTalk('goodMorning'), siteId=session.deviceUid)
+		self.endDialog(sessionId=session.sessionId, text=self.randomTalk('goodMorning'), siteId=session.siteId)
 
 
 	@IntentHandler('GoodNight')
 	def nightIntent(self, session: DialogSession):
-		self.endDialog(sessionId=session.sessionId, text=self.randomTalk('goodNight'), siteId=session.deviceUid)
+		self.endDialog(sessionId=session.sessionId, text=self.randomTalk('goodNight'), siteId=session.siteId)
 		self.SkillManager.skillBroadcast(constants.EVENT_SLEEP)
 
 
@@ -197,7 +197,7 @@ class RedQueen(AliceSkill):
 		if 'State' not in slots.keys():
 			self.logError('No state provided for changing user state')
 			self.endDialog(sessionId=session.sessionId, text=self.TalkManager.randomTalk('error', skill='system'),
-			               siteId=session.deviceUid)
+			               siteId=session.siteId)
 			return
 
 		# Todo re enable this if statement when the "personDesignation" code gets fully implemented
@@ -209,7 +209,7 @@ class RedQueen(AliceSkill):
 			self.logWarning(f"Unsupported user state \"{slots['State'][0].value['value']}\"")
 
 		self.endDialog(sessionId=session.sessionId, text=self.TalkManager.randomTalk(slots['State'][0].value['value']),
-		               siteId=session.deviceUid)
+		               siteId=session.siteId)
 
 
 	def randomlySpeak(self, init: bool = False):
