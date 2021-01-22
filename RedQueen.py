@@ -10,6 +10,7 @@ from random import randint
 from core.ProjectAliceExceptions import SkillStartingFailed
 from core.base.model.AliceSkill import AliceSkill
 from core.commons import constants
+from core.device.model.DeviceAbility import DeviceAbility
 from core.dialog.model.DialogSession import DialogSession
 from core.util.Decorators import IntentHandler
 
@@ -130,7 +131,7 @@ class RedQueen(AliceSkill):
 				chance = 25
 
 			if randint(0, 100) < chance:
-				self.say(text=self.randomTalk('thanksForBeingNice'), siteId=session.siteId)
+				self.say(text=self.randomTalk('thanksForBeingNice'), siteId=session.deviceUid)
 
 
 	def politnessUsed(self, text: str) -> bool:
@@ -173,19 +174,19 @@ class RedQueen(AliceSkill):
 
 	@IntentHandler('WhoAreYou')
 	def whoIntent(self, session: DialogSession):
-		self.endDialog(sessionId=session.sessionId, text=self.randomTalk('aliceInfos'), siteId=session.siteId)
+		self.endDialog(sessionId=session.sessionId, text=self.randomTalk('aliceInfos'), siteId=session.deviceUid)
 
 
 	@IntentHandler('GoodMorning')
 	def morningIntent(self, session: DialogSession):
 		self.SkillManager.skillBroadcast(constants.EVENT_WAKEUP)
 		time.sleep(0.5)
-		self.endDialog(sessionId=session.sessionId, text=self.randomTalk('goodMorning'), siteId=session.siteId)
+		self.endDialog(sessionId=session.sessionId, text=self.randomTalk('goodMorning'), siteId=session.deviceUid)
 
 
 	@IntentHandler('GoodNight')
 	def nightIntent(self, session: DialogSession):
-		self.endDialog(sessionId=session.sessionId, text=self.randomTalk('goodNight'), siteId=session.siteId)
+		self.endDialog(sessionId=session.sessionId, text=self.randomTalk('goodNight'), siteId=session.deviceUid)
 		self.SkillManager.skillBroadcast(constants.EVENT_SLEEP)
 
 
@@ -196,7 +197,7 @@ class RedQueen(AliceSkill):
 		if 'State' not in slots.keys():
 			self.logError('No state provided for changing user state')
 			self.endDialog(sessionId=session.sessionId, text=self.TalkManager.randomTalk('error', skill='system'),
-						   siteId=session.siteId)
+			               siteId=session.deviceUid)
 			return
 
 		# Todo re enable this if statement when the "personDesignation" code gets fully implemented
@@ -208,7 +209,7 @@ class RedQueen(AliceSkill):
 			self.logWarning(f"Unsupported user state \"{slots['State'][0].value['value']}\"")
 
 		self.endDialog(sessionId=session.sessionId, text=self.TalkManager.randomTalk(slots['State'][0].value['value']),
-					   siteId=session.siteId)
+		               siteId=session.deviceUid)
 
 
 	def randomlySpeak(self, init: bool = False):
@@ -226,12 +227,14 @@ class RedQueen(AliceSkill):
 		elif self.mood == 'Frustrated':
 			maxi /= 2
 
+		if not init and not self.UserManager.checkIfAllUser('goingBed') and not self.UserManager.checkIfAllUser('sleeping'):
+			devices = self.DeviceManager.getDevicesWithAbilities([DeviceAbility.PLAY_SOUND])
+			if devices:
+				self.say(self.randomTalk(f'randomlySpeak{self.mood}'), siteId=random.choice(devices).uid)
+
 		rnd = random.randint(mini, maxi)
 		self.ThreadManager.doLater(interval=rnd, func=self.randomlySpeak)
 		self.logInfo(f'Scheduled next random speaking in {rnd} seconds')
-
-		if not init and not self.UserManager.checkIfAllUser('goingBed') and not self.UserManager.checkIfAllUser('sleeping'):
-			self.say(self.randomTalk(f'randomlySpeak{self.mood}'), siteId='all')
 
 
 	def changeRedQueenStat(self, stat: str, amount: int):
