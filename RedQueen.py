@@ -1,10 +1,9 @@
 import json
-import time
-from pathlib import Path
-
 import os
 import random
 import shutil
+import time
+from pathlib import Path
 from random import randint
 
 from core.ProjectAliceExceptions import SkillStartingFailed
@@ -179,7 +178,7 @@ class RedQueen(AliceSkill):
 
 	@IntentHandler('GoodMorning')
 	def morningIntent(self, session: DialogSession):
-		self.SkillManager.skillBroadcast(constants.EVENT_WAKEUP)
+		self.broadcast(method=constants.EVENT_WAKEUP, exceptions=[constants.DUMMY], propagateToSkills=True)
 		time.sleep(0.5)
 		self.endDialog(sessionId=session.sessionId, text=self.randomTalk('goodMorning'), deviceUid=session.deviceUid)
 
@@ -187,7 +186,7 @@ class RedQueen(AliceSkill):
 	@IntentHandler('GoodNight')
 	def nightIntent(self, session: DialogSession):
 		self.endDialog(sessionId=session.sessionId, text=self.randomTalk('goodNight'), deviceUid=session.deviceUid)
-		self.SkillManager.skillBroadcast(constants.EVENT_SLEEP)
+		self.broadcast(method=constants.EVENT_SLEEP, exceptions=[constants.DUMMY], propagateToSkills=True)
 
 
 	@IntentHandler('ChangeUserState')
@@ -203,7 +202,7 @@ class RedQueen(AliceSkill):
 		# Todo re enable this if statement when the "personDesignation" code gets fully implemented
 		# if not 'Who' in slots.keys():
 		try:
-			self.SkillManager.skillBroadcast(slots['State'][0].value['value'])
+			self.broadcast(method=slots['State'][0].value['value'], exceptions=[constants.DUMMY], propagateToSkills=True)
 
 		except:
 			self.logWarning(f"Unsupported user state \"{slots['State'][0].value['value']}\"")
