@@ -18,6 +18,7 @@ class RedQueen(AliceSkill):
 
 	def __init__(self):
 		self._me = None
+		self.chatterTimer = None
 		super().__init__()
 
 
@@ -232,7 +233,7 @@ class RedQueen(AliceSkill):
 				self.say(self.randomTalk(f'randomlySpeak{self.mood}'), deviceUid=random.choice(devices).uid)
 
 		rnd = random.randint(mini, maxi)
-		self.ThreadManager.doLater(interval=rnd, func=self.randomlySpeak)
+		self.chatterTimer = self.ThreadManager.newTimer(interval=rnd, func=self.randomlySpeak)
 		self.logInfo(f'Scheduled next random speaking in {rnd} seconds')
 
 
@@ -259,3 +260,17 @@ class RedQueen(AliceSkill):
 		}
 
 		return self.Commons.dictMaxValue(stats)
+
+
+	def getMoodValue(self, mood: str):
+		if self._me:
+			return self._me['stats'][mood]
+		else:
+			return constants.UNKNOWN
+
+
+	def onWakeword(self, deviceUid: str, user: str = constants.UNKNOWN_USER):
+		if chatterTimer:
+			self.ThreadManager.removeTimer(self.chatterTimer)
+			self.chatterTimer = None
+
