@@ -270,7 +270,7 @@ class RedQueen(AliceSkill):
 
 
 	def onWakeword(self, deviceUid: str, user: str = constants.UNKNOWN_USER):
-		if chatterTimer:
+		if self.chatterTimer:
 			self.ThreadManager.removeTimer(self.chatterTimer)
 			self.chatterTimer = None
 			self.randomlySpeak(init=True)
