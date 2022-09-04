@@ -273,4 +273,5 @@ class RedQueen(AliceSkill):
 		if chatterTimer:
 			self.ThreadManager.removeTimer(self.chatterTimer)
 			self.chatterTimer = None
+			self.randomlySpeak(init=True)
 
