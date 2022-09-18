@@ -1,0 +1,236 @@
+{
+	"skill": "RedQueen",
+	"slotTypes": [
+		{
+			"name": "UserState",
+			"matchingStrictness": null,
+			"automaticallyExtensible": false,
+			"useSynonyms": true,
+			"values": [
+				{
+					"value": "onGoingBed",
+					"synonyms": [
+						"indo dormir",
+						"indo para cama",
+						"para a cama",
+						"sonolento",
+						"cansado",
+						"sono",
+						"ir para cama",
+						"encontrar com morpheu"
+					]
+				},
+				{
+					"value": "onLeavingHome",
+					"synonyms": [
+						"saindo",
+						"saindo de casa",
+						"sairmos de casa",
+						"sair de casa",
+						"indo ali"
+					]
+				},
+				{
+					"value": "onReturningHome",
+					"synonyms": [
+						"voltei pra casa",
+						"voltei",
+						"em casa",
+						"querida cheguei",
+						"cheguei",
+						"estou de volta"
+					]
+				},
+				{
+					"value": "onWatchingTV",
+					"synonyms": [
+						"assistindo tv",
+						"assistir tv",
+						"vendo tv",
+						"tv",
+						"ver tv",
+						"tempo de tv"
+					]
+				},
+				{
+					"value": "onEating",
+					"synonyms": [
+						"comendo",
+						"tenho comida",
+						"tem comida",
+						"comer",
+						"com fome",
+						"fome"
+					]
+				},
+				{
+					"value": "onMakeup",
+					"synonyms": [
+						"maquiando",
+						"maquiagem",
+						"me deixando bonito",
+						"ficando bonito",
+						"passando reboco"
+					]
+				},
+				{
+					"value": "onCooking",
+					"synonyms": [
+						"cozinhando",
+						"fazendo comida"
+					]
+				}
+			]
+		},
+		{
+			"name": "PersonDesignation",
+			"matchingStrictness": null,
+			"automaticallyExtensible": true,
+			"useSynonyms": true,
+			"values": [
+				{
+					"value": "i",
+					"synonyms": [
+						"eu estou",
+						"eu tenho",
+						"eu sou",
+						"eu vou"
+					]
+				},
+				{
+					"value": "we",
+					"synonyms": [
+						"nós",
+						"nós estamos",
+						"nós somos",
+						"temos"
+					]
+				}
+			]
+		}
+	],
+	"intents": [
+		{
+			"name": "WhoAreYou",
+			"enabledByDefault": true,
+			"utterances": [
+				"você poderia me dizer o que você é",
+				"por favor me fale sobre você",
+				"você pode me dizer quem você é",
+				"você pode me dizer quem é você",
+				"que porra é você",
+				"diga-me quem é você",
+				"me diga quem é você",
+				"quem diabos é você",
+				"quem é você mulher",
+				"what the hell are you",
+				"o que você é",
+				"quem é você"
+			],
+			"slots": []
+		},
+		{
+			"name": "GoodMorning",
+			"enabledByDefault": true,
+			"utterances": [
+				"por favor acorde eva",
+				"acorde eva por favor",
+				"por favor acorde",
+				"acorde por favor",
+				"abra seus olhos já é de manha",
+				"já é de manhã eva",
+				"bom dia eva",
+				"É hora de acordar eva",
+				"eva acorde",
+				"acorde eva",
+				"acordar dorminhoca",
+				"bom começo de dia",
+				"bom dia é hora de acordar",
+				"hora de acordar bom dia",
+				"hora de acordar",
+				"bom dia"
+			],
+			"slots": []
+		},
+		{
+			"name": "GoodNight",
+			"enabledByDefault": true,
+			"utterances": [
+				"Alice é hora de dormir",
+				"tenha uma boa noite Alice",
+				"tenha uma ótima noite",
+				"desejo-lhe uma boa noite Alice",
+				"desejo que tenha boa noite Alice",
+				"tenha uma boa noite e bons sonhos",
+				"tenha uma boa noite de sono",
+				"boa noite e durma bem",
+				"durma bem Alice",
+				"vou dormir",
+				"Eu te desejo uma boa noite",
+				"hora de dormir, boa noite ",
+				"hora de dormir, boa noite Alice",
+				"boa noite minha AI"
+			],
+			"slots": []
+		},
+		{
+		    	"name": "GoodAfternoon",
+            		"enabledByDefault": true,
+            		"utterances": [
+                		"boa tarde alice",
+                		"boa tarde",
+                		"abra seus olhos já é tarde",
+				"já é de tarde Alice",
+                		"boa tarde pra você",
+                		"é hora da tarde Alice",
+                		"Alice já é tarde",
+                		"tarde"
+            	],
+                	"slots": []
+        	},
+		{
+			"name": "ChangeUserState",
+			"enabledByDefault": true,
+			"utterances": [
+				"{estamos :=>Who} {indo para a cama:=>State}",
+				"vamos lá {para a cama:=>State}",
+				"tempo de ir {para cama:=>State}",
+				"{eu:=>Who} estou com {sono:=>State}",
+				"{nós:=>Who} estamos {cozinhando:=>State}",
+				"{eu:=>Who} estou colocando {maquiagem:=>State}",
+				"{eu:=>Who} estou colocando {maquiagem:=>State} on",
+				"{eu:=>Who} estou fazendo {maquiagem:=>State}",
+				"{eu:=>Who} vou {dormir:=>State}",
+				"{eu:=>Who} {dormir:=>State}",
+				"{nós:=>Who} vamos {dormir:=>State}",
+				"{nós:=>Who} vamos {para a cama:=>State}",
+				"é tempo {ver TV:=>State}",
+				"{saindo:=>State}",
+				"prepare a {tv:=>State} por favor",
+				"por favor prepare para {nós:=>Who} {sairmos de casa:=>State}",
+				"por favor {nós:=>Who} vamos {sair de casa:=>State}",
+				"prepare para {comer:=>State} por favor",
+				"por favor se prepare para {sairmos de casa:=>State}",
+				"se prepare para{dormir:=>State}",
+				"vamos {comer:=>State}",
+				"{nós:=>Who} acabamos de  {voltar:=>State}",
+				"{nós:=>Who} estamos {vendo tv:=>State}",
+				"{nós:=>Who} estamos {assistindo tv:=>State}"
+			],
+			"slots": [
+				{
+					"name": "State",
+					"required": false,
+					"type": "UserState",
+					"missingQuestion": ""
+				},
+				{
+					"name": "Who",
+					"required": false,
+					"type": "PersonDesignation",
+					"missingQuestion": ""
+				}
+			]
+		}
+	]
+}
