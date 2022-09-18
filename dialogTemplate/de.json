@@ -177,6 +177,23 @@
 			"slots": []
 		},
 		{
+		  "name": "ThankYou",
+		  "enabledByDefault": true,
+		  "utterances": [
+			"Vielen Dank",
+			"Danke",
+			"Danke schön",
+			"Danke dir",
+			"Vielen Dank Alice",
+			"Danke Alice",
+			"Danke schön Alice",
+			"Danke dir Alice",
+			"Alice ich danke dir!",
+			"Dankeschön",
+			"Dankeschön Alice"
+		  ]
+		},
+		{
 			"name": "ChangeUserState",
 			"enabledByDefault": true,
 			"utterances": [

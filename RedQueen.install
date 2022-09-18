@@ -1,6 +1,6 @@
 {
     "name": "RedQueen",
-    "version": "1.0.44",
+    "version": "1.0.45",
     "icon": "fas fa-biohazard",
     "category": "alice",
     "author": "ProjectAlice",
@@ -18,7 +18,7 @@
             "de",
             "it",
             "pl",
-	    "pt"
+	    	"pt"
         ]
     }
 }

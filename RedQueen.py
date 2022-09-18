@@ -135,6 +135,7 @@ class RedQueen(AliceSkill):
 
 
 	def politnessUsed(self, text: str) -> bool:
+		self.logInfo(f'Checking if you were nice{text}')
 		forms = self.LanguageManager.getStrings(key='politness', skill='system')
 
 		for form in forms:
@@ -271,7 +272,7 @@ class RedQueen(AliceSkill):
 
 	def onWakeword(self, deviceUid: str, user: str = constants.UNKNOWN_USER):
 		if self.chatterTimer:
-			self.ThreadManager.removeTimer(self.chatterTimer)
+			self.chatterTimer.cancel()
 			self.chatterTimer = None
 			self.randomlySpeak(init=True)
 
