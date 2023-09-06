@@ -2,6 +2,9 @@ import json
 import os
 import random
 import shutil
+import threading
+from typing import Optional
+
 import time
 from pathlib import Path
 from random import randint
@@ -18,7 +21,7 @@ class RedQueen(AliceSkill):
 
 	def __init__(self):
 		self._me = None
-		self.chatterTimer = None
+		self.chatterTimer: Optional[threading.Timer] = None
 		super().__init__()
 
 
@@ -38,7 +41,7 @@ class RedQueen(AliceSkill):
 				shutil.copyfile(str(redQueenIdentityFileTemplate), str(redQueenIdentityFile))
 				self.logInfo('New Red Queen is born')
 				self._me = json.loads(redQueenIdentityFile.read_text())
-				self._me['infos']['born'] = time.strftime("%d.%m.%Y")
+				self._me['infos']['born'] = time.strftime('%d.%m.%Y')
 				self._saveRedQueenIdentity()
 			else:
 				raise SkillStartingFailed(skillName=self.name, error='Cannot find Red Queen identity template')
@@ -270,9 +273,15 @@ class RedQueen(AliceSkill):
 			return constants.UNKNOWN
 
 
+	def onHotword(self, deviceUid: str, user: str = constants.UNKNOWN_USER):
+		self.onWakeword(deviceUid=deviceUid, user=user)
+
+
 	def onWakeword(self, deviceUid: str, user: str = constants.UNKNOWN_USER):
-		if self.chatterTimer:
-			self.chatterTimer.cancel()
-			self.chatterTimer = None
-			self.randomlySpeak(init=True)
+		if not self.chatterTimer:
+			return
+
+		self.chatterTimer.cancel()
+		self.chatterTimer = None
+		self.randomlySpeak(init=True)
 
