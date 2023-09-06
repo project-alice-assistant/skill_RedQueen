@@ -27,7 +27,7 @@ jobs:
         run: |
           projectalice-sk validate
       - name: Mypi tests
-        uses: jpetrucciani/mypy-check@master
+        uses: jpetrucciani/mypy-check@0.971
         with:
           path: '.'
           requirements_file: 'mypy_requirements.txt'
