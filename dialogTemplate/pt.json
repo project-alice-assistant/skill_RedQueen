@@ -174,20 +174,16 @@
 			"slots": []
 		},
 		{
-		    	"name": "GoodAfternoon",
-            		"enabledByDefault": true,
-            		"utterances": [
-                		"boa tarde alice",
-                		"boa tarde",
-                		"abra seus olhos já é tarde",
-				"já é de tarde Alice",
-                		"boa tarde pra você",
-                		"é hora da tarde Alice",
-                		"Alice já é tarde",
-                		"tarde"
-            	],
-                	"slots": []
-        	},
+			"name": "ThankYou",
+			"enabledByDefault": true,
+			"utterances": [
+				"OBRIGADO",
+				"Muito obrigado",
+				"obrigado alice",
+				"Eu que agradeço"
+			],
+			"slots": []
+		},
 		{
 			"name": "ChangeUserState",
 			"enabledByDefault": true,

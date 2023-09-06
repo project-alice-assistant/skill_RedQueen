@@ -157,6 +157,20 @@
 			"slots": []
 		},
 		{
+			"name": "ThankYou",
+			"enabledByDefault": true,
+			"utterances": [
+				"Merci",
+				"Je te remercie",
+				"Merci beaucoup",
+				"Merci Alice",
+				"Merci beaucoup Alice",
+				"Thanks",
+				"gracias"
+			],
+			"slots": []
+		},
+		{
 			"name": "ChangeUserState",
 			"enabledByDefault": true,
 			"utterances": [

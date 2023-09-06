@@ -156,6 +156,15 @@
 			"slots": []
 		},
 		{
+			"name": "ThankYou",
+			"enabledByDefault": true,
+			"utterances": [
+				"Grazie",
+				"Grazie mille"
+			],
+			"slots": []
+		},
+		{
 			"name": "ChangeUserState",
 			"enabledByDefault": true,
 			"utterances": [

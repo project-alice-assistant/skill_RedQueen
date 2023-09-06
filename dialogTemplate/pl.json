@@ -223,6 +223,17 @@
 			"slots": []
 		},
 		{
+			"name": "ThankYou",
+			"enabledByDefault": true,
+			"utterances": [
+				"DZIĘKI",
+				"Dziękuję ci",
+				"Wielkie dzięki",
+				"dzięki Alicja"
+			],
+			"slots": []
+		},
+		{
 			"name": "ChangeUserState",
 			"enabledByDefault": true,
 			"utterances": [
